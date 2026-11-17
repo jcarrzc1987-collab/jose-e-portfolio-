@@ -1,0 +1,485 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Treact Landing Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: classic SaaS landing page — two-column sections alternating text and illustration, light only, matching the reference */
+:root {
+  --primary: #6415ff;
+  --primary-dark: #4a0fd1;
+  --heading: #243e63;
+  --text: #4a5568;
+  --muted: #718096;
+  --soft: #cbd5e0;
+  --lavender: #ece6ff;
+  --bg: #ffffff;
+  --teal: #38b2ac;
+  --teal-light: #4fd1c5;
+  --red: #f56565;
+  --blue: #3c4ed3;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+section .wrap { padding-block: 80px; }
+
+/* Nav */
+.nav { display: flex; align-items: center; justify-content: space-between; padding-block: 32px; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 28px; color: var(--heading); }
+.logo-mark { width: 42px; height: 42px; background: var(--primary); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 26px; border-radius: 2px; }
+.nav-links { display: flex; align-items: center; gap: 40px; font-weight: 600; color: var(--heading); }
+.nav-links a { border-bottom: 2px solid transparent; padding-bottom: 2px; transition: color .2s, border-color .2s; }
+.nav-links a:hover { color: var(--primary); border-color: var(--primary); }
+.nav-links .login { margin-left: 32px; }
+.nav-links .signup { background: var(--primary); color: #fff; padding: 12px 32px; border-radius: 999px; border: none; }
+.nav-links .signup:hover { background: var(--primary-dark); color: #fff; }
+.menu-btn { display: none; background: none; border: 0; padding: 8px; color: var(--heading); cursor: pointer; }
+
+/* Common */
+.eyebrow { font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: .12em; font-size: 15px; margin: 0 0 12px; }
+h1, h2 { color: var(--heading); font-weight: 900; line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(36px, 4.4vw, 56px); font-weight: 800; }
+h2 { font-size: clamp(32px, 4vw, 52px); }
+.hl { color: var(--primary); }
+.lead { font-size: 18px; color: var(--muted); line-height: 1.8; margin: 24px 0 0; max-width: 34em; }
+.btn { display: inline-block; background: var(--primary); color: #fff; font-weight: 700; padding: 16px 36px; border-radius: 999px; border: 0; font: inherit; font-weight: 700; cursor: pointer; transition: background .2s; }
+.btn:hover { background: var(--primary-dark); }
+.btn:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #a78bfa; outline-offset: 2px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; }
+.two-col > * { min-width: 0; }
+.art { width: 100%; height: auto; display: block; }
+
+/* Hero */
+.hero .wrap { padding-block: 40px 96px; }
+.hero h1 { margin-top: 40px; }
+.signup-form { position: relative; max-width: 560px; margin-top: 40px; display: flex; border: 2px solid #e2e8f0; border-radius: 999px; padding: 6px; box-shadow: 0 2px 10px rgba(36,62,99,.05); }
+.signup-form input { flex: 1; min-width: 0; border: 0; outline: none; padding: 16px 24px; font: inherit; font-size: 18px; color: var(--heading); background: transparent; border-radius: 999px; }
+.signup-form input::placeholder { color: #a0aec0; }
+.signup-form .btn { padding: 16px 40px; font-size: 17px; }
+.form-note { margin-top: 12px; font-size: 14px; color: var(--primary); min-height: 1.4em; }
+.customers { margin-top: 48px; }
+.customers p { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #a0aec0; margin: 0 0 12px; }
+.customer-logos { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; color: #a0aec0; font-weight: 700; }
+.customer-logos span:nth-child(1) { font-family: Georgia, serif; letter-spacing: .06em; }
+.customer-logos span:nth-child(2) { font-style: italic; }
+.customer-logos span:nth-child(3) { font-size: 13px; border: 2px solid currentColor; padding: 2px 6px; }
+
+/* Features */
+.center { text-align: center; }
+.center .lead { margin-left: auto; margin-right: auto; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
+.feature { display: flex; gap: 24px; align-items: flex-start; padding: 16px; }
+.icon-ring { flex: none; width: 64px; height: 64px; border-radius: 50%; border: 1px solid #e2e8f0; display: grid; place-items: center; color: var(--primary); }
+.feature h3 { margin: 0; font-size: 26px; font-weight: 700; color: var(--heading); }
+.feature p { margin: 12px 0 0; color: var(--muted); line-height: 2; }
+
+/* Quality */
+.shot { border: 1px solid #edf2f7; border-radius: 6px; box-shadow: 0 10px 40px rgba(36,62,99,.08); overflow: hidden; position: relative; }
+.shot-wrap { position: relative; }
+.dots { position: absolute; right: -24px; bottom: -40px; width: 120px; height: 120px; background-image: radial-gradient(var(--primary) 2.5px, transparent 3px); background-size: 14px 14px; opacity: .55; z-index: -1; }
+.quality .lead { margin-bottom: 36px; }
+
+/* Steps */
+.laptop { max-width: 560px; margin: 0 auto; }
+.laptop-screen { background: #2d3748; border-radius: 16px 16px 0 0; padding: 14px 14px 18px; }
+.laptop-screen svg { display: block; width: 100%; height: auto; border-radius: 2px; }
+.laptop-base { height: 14px; margin: 0 -40px; background: linear-gradient(#cbd5e0, #a0aec0); border-radius: 0 0 14px 14px; position: relative; }
+.laptop-base::after { content: ""; position: absolute; left: 40%; right: 40%; top: 0; height: 5px; background: #718096; border-radius: 0 0 6px 6px; }
+.steps { list-style: none; padding: 0; margin: 48px 0 0; display: grid; gap: 40px; }
+.steps li { display: flex; gap: 28px; }
+.step-num { font-size: 52px; font-weight: 600; color: #cbd5e0; line-height: 1; min-width: 70px; }
+.steps h3 { margin: 0; font-size: 26px; font-weight: 600; color: var(--heading); line-height: 1.2; }
+.steps p { margin: 14px 0 0; color: var(--muted); line-height: 2; max-width: 22em; }
+
+/* Values */
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+.value h3 { display: flex; align-items: center; gap: 16px; margin: 0; font-size: 26px; font-weight: 700; color: var(--heading); }
+.value-icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.value-icon.green { background: #c6f6d5; color: #2f855a; }
+.value-icon.red { background: #fed7d7; color: #c53030; }
+.value p { margin: 18px 0 0; color: var(--muted); line-height: 1.8; max-width: 18em; }
+.values .btn { margin-top: 40px; }
+
+/* Pricing */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 64px; align-items: stretch; }
+.plan { border-radius: 8px; box-shadow: 0 6px 30px rgba(36,62,99,.08); text-align: center; position: relative; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+.plan::before { content: ""; display: block; height: 8px; }
+.plan.teal::before { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+.plan.red::before { background: var(--red); }
+.plan.featured { background: var(--blue); color: #fff; transform: translateY(-16px); }
+.plan.featured::before { background: transparent; }
+.plan-head { padding: 40px 24px 44px; border-bottom: 1px solid #edf2f7; }
+.featured .plan-head { border-color: rgba(255,255,255,.25); }
+.plan-name { font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: .03em; color: var(--heading); }
+.plan-price { font-size: 64px; font-weight: 800; color: var(--heading); line-height: 1.1; margin-top: 12px; font-variant-numeric: tabular-nums; }
+.plan-period { font-weight: 700; letter-spacing: .15em; color: #a0aec0; margin-top: 12px; text-transform: uppercase; }
+.featured .plan-name, .featured .plan-price, .featured .plan-period { color: #fff; }
+.plan-body { padding: 36px 24px; flex: 1; border-bottom: 1px solid #edf2f7; }
+.featured .plan-body { border-color: rgba(255,255,255,.25); }
+.plan-body h4 { margin: 0 0 20px; font-size: 24px; font-weight: 700; color: var(--heading); }
+.featured .plan-body h4 { color: #fff; }
+.plan-body ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; font-size: 19px; color: var(--muted); font-weight: 500; }
+.featured .plan-body ul { color: #fff; }
+.plan-foot { padding: 36px 32px 44px; }
+.plan-btn { display: block; width: 100%; padding: 18px; border-radius: 999px; border: 0; font: inherit; font-weight: 700; letter-spacing: .1em; font-size: 15px; color: #fff; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+.plan-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+.teal .plan-btn { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+.red .plan-btn { background: var(--red); }
+.featured .plan-btn { background: #fff; color: var(--primary); }
+
+/* Footer */
+footer { background: #f7fafc; border-top: 1px solid #edf2f7; }
+footer .wrap { padding-block: 48px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+footer .links { display: flex; flex-wrap: wrap; gap: 28px; font-weight: 600; color: var(--heading); }
+footer small { color: var(--muted); }
+
+@media (max-width: 1000px) {
+  .nav-links { display: none; position: absolute; top: 96px; left: 16px; right: 16px; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 16px; border-radius: 12px; box-shadow: 0 12px 40px rgba(36,62,99,.15); z-index: 20; text-align: center; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px; }
+  .nav-links .login { margin-left: 0; }
+  .menu-btn { display: block; }
+  header { position: relative; }
+  .two-col { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .plans { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .plan.featured { transform: none; }
+  .art-col { order: 2; }
+  .laptop { padding: 0 40px; }
+}
+@media (max-width: 520px) {
+  section .wrap { padding-block: 56px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .signup-form { flex-direction: column; border-radius: 20px; }
+  .signup-form .btn { width: 100%; }
+  .steps li { gap: 16px; }
+  .step-num { font-size: 40px; min-width: 52px; }
+  .plan-price { font-size: 52px; }
+  .laptop { padding: 0 20px; }
+  .laptop-base { margin: 0 -20px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<!-- Reusable illustrations -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="heroArt" viewBox="0 0 600 480">
+      <path d="M140 150 C180 60 330 40 440 70 C540 95 600 170 590 260 C580 360 520 430 400 450 C270 470 110 450 70 360 C35 285 100 230 140 150 Z" fill="#ece6ff"/>
+      <!-- picture frame -->
+      <line x1="210" y1="64" x2="235" y2="40" stroke="#4a5568" stroke-width="2"/>
+      <line x1="260" y1="64" x2="235" y2="40" stroke="#4a5568" stroke-width="2"/>
+      <circle cx="235" cy="40" r="4" fill="#2d3748"/>
+      <rect x="150" y="64" width="170" height="110" fill="#3f3d56"/>
+      <rect x="158" y="72" width="154" height="94" fill="#f1f1f8"/>
+      <path d="M165 130 L192 104 L205 112 L226 88 L246 106 L262 96 L300 128 L280 140 L262 128 L246 140 L222 126 L200 144 L182 130 Z" fill="#6415ff"/>
+      <path d="M192 104 L198 116 L205 112 M226 88 L230 104 L238 100 M262 96 L266 108" stroke="#fff" stroke-width="3" fill="none"/>
+      <!-- coat rack -->
+      <line x1="510" y1="70" x2="510" y2="420" stroke="#3f3d56" stroke-width="6"/>
+      <path d="M510 78 C530 50 560 60 548 86" stroke="#3f3d56" stroke-width="5" fill="none"/>
+      <path d="M510 78 C490 55 470 70 482 88" stroke="#3f3d56" stroke-width="5" fill="none"/>
+      <path d="M486 360 L534 360 L522 395 L498 395 Z" fill="none" stroke="#3f3d56" stroke-width="4"/>
+      <path d="M480 420 L510 395 L540 420" stroke="#3f3d56" stroke-width="5" fill="none"/>
+      <!-- jacket -->
+      <path d="M455 110 C460 95 490 90 505 98 L525 110 C548 125 556 170 552 210 L540 214 L534 160 L534 250 L460 250 L460 160 L452 214 L438 210 C434 170 440 128 455 110 Z" fill="#2f2e41"/>
+      <circle cx="488" cy="92" r="26" fill="#6415ff"/>
+      <circle cx="488" cy="98" r="15" fill="#2f2e41"/>
+      <line x1="497" y1="120" x2="497" y2="250" stroke="#4a4867" stroke-width="2"/>
+      <!-- monitor -->
+      <path d="M335 196 L392 186 L392 248 L338 252 Z" fill="#3f3d56"/>
+      <rect x="360" y="250" width="8" height="18" fill="#3f3d56"/>
+      <rect x="348" y="266" width="32" height="5" fill="#3f3d56"/>
+      <!-- small plant on desk -->
+      <path d="M420 262 L414 252 L420 254 L422 240 L428 252 L434 244 L432 262 Z" fill="#6415ff"/>
+      <rect x="414" y="262" width="20" height="10" fill="#3f3d56"/>
+      <!-- desk -->
+      <rect x="260" y="272" width="210" height="10" fill="#e2e8f0"/>
+      <rect x="400" y="282" width="62" height="130" fill="#3f3d56"/>
+      <line x1="404" y1="330" x2="458" y2="330" stroke="#575a89" stroke-width="2"/>
+      <line x1="404" y1="370" x2="458" y2="370" stroke="#575a89" stroke-width="2"/>
+      <rect x="380" y="282" width="6" height="130" fill="#cbd5e0"/>
+      <!-- chair -->
+      <path d="M246 228 C240 260 244 300 262 312 L300 312 L300 300 L268 296 C258 280 256 250 262 228 Z" fill="#f1f1f1"/>
+      <line x1="270" y1="312" x2="252" y2="420" stroke="#3f3d56" stroke-width="4"/>
+      <line x1="290" y1="312" x2="306" y2="420" stroke="#3f3d56" stroke-width="4"/>
+      <line x1="280" y1="312" x2="282" y2="400" stroke="#3f3d56" stroke-width="4"/>
+      <!-- woman -->
+      <path d="M268 222 C268 200 286 190 300 196 C322 206 324 262 316 300 L280 302 C270 280 266 250 268 222 Z" fill="#6415ff"/>
+      <path d="M272 170 C268 140 300 128 316 146 C326 160 322 196 320 230 C306 236 284 236 274 228 C278 210 276 190 272 170 Z" fill="#a0616a"/>
+      <path d="M272 170 C268 140 300 128 316 146 C326 160 326 196 324 224 C312 230 290 232 278 226 C282 206 280 188 272 170 Z" fill="#8b5a52"/>
+      <path d="M310 230 C330 240 345 250 352 258 L346 264 C334 256 318 250 306 244 Z" fill="#6415ff"/>
+      <path d="M296 298 L350 300 L352 380 L340 382 L332 318 L298 316 Z" fill="#2f2e41"/>
+      <path d="M338 380 L356 380 L364 392 L340 394 Z" fill="#a0616a"/>
+      <!-- floor plant -->
+      <rect x="136" y="372" width="34" height="48" fill="#3f3d56"/>
+      <line x1="138" y1="384" x2="168" y2="384" stroke="#575a89" stroke-width="2"/>
+      <line x1="138" y1="396" x2="168" y2="396" stroke="#575a89" stroke-width="2"/>
+      <line x1="153" y1="372" x2="153" y2="300" stroke="#3f3d56" stroke-width="3"/>
+      <path d="M152 340 C130 300 90 296 70 308 C100 312 120 330 152 350 Z" fill="#6415ff"/>
+      <path d="M154 330 C170 300 200 290 220 296 C196 304 178 320 156 344 Z" fill="#6415ff"/>
+      <path d="M152 312 C140 290 140 270 152 252 C160 270 160 290 152 312 Z" fill="#6415ff"/>
+      <line x1="40" y1="421" x2="560" y2="421" stroke="#e2e8f0" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="miniSite" viewBox="0 0 800 460">
+      <rect width="800" height="460" fill="#ffffff"/>
+      <rect x="28" y="26" width="24" height="24" fill="#6415ff"/>
+      <text x="40" y="44" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="16" fill="#fff">T</text>
+      <text x="62" y="44" font-family="Inter, sans-serif" font-weight="800" font-size="17" fill="#243e63">Treact</text>
+      <g font-family="Inter, sans-serif" font-weight="600" font-size="9" fill="#243e63">
+        <text x="430" y="42">About</text><text x="480" y="42">Blog</text><text x="522" y="42">Pricing</text><text x="574" y="42">Contact Us</text><text x="660" y="42">Login</text>
+      </g>
+      <rect x="696" y="28" width="76" height="22" rx="11" fill="#6415ff"/>
+      <text x="734" y="43" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="9" fill="#fff">Sign Up</text>
+      <text x="28" y="132" font-family="Inter, sans-serif" font-weight="800" font-size="25" fill="#243e63">Beautiful React</text>
+      <text x="28" y="162" font-family="Inter, sans-serif" font-weight="800" font-size="25" fill="#243e63">Templates <tspan fill="#6415ff">for you.</tspan></text>
+      <g font-family="Inter, sans-serif" font-size="9.5" fill="#4a5568">
+        <text x="28" y="196">Our templates are easy to setup, understand and</text>
+        <text x="28" y="211">customize. Fully modular components with a variety of</text>
+        <text x="28" y="226">pages and components.</text>
+      </g>
+      <rect x="28" y="248" width="290" height="40" rx="20" fill="#fff" stroke="#e2e8f0" stroke-width="2"/>
+      <text x="48" y="272" font-family="Inter, sans-serif" font-size="9.5" fill="#a0aec0">Your E-mail Address</text>
+      <rect x="200" y="252" width="114" height="32" rx="16" fill="#6415ff"/>
+      <text x="257" y="272" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="9.5" fill="#fff">Get Started</text>
+      <text x="28" y="330" font-family="Inter, sans-serif" font-weight="700" font-size="7" letter-spacing="1" fill="#a0aec0">OUR TRUSTED CUSTOMERS</text>
+      <g font-weight="700" fill="#a0aec0">
+        <text x="28" y="356" font-family="Georgia, serif" font-size="12" letter-spacing="1">NORTHWIND</text>
+        <rect x="120" y="345" width="14" height="14" fill="#cbd5e0"/>
+        <text x="142" y="356" font-family="Inter, sans-serif" font-style="italic" font-size="11">Brightline</text>
+        <rect x="210" y="344" width="58" height="16" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
+        <text x="239" y="355" text-anchor="middle" font-family="Inter, sans-serif" font-size="7">ATLAS CO.</text>
+      </g>
+      <use href="#heroArt" x="380" y="80" width="400" height="320"/>
+    </symbol>
+
+    <symbol id="valuesArt" viewBox="0 0 600 520">
+      <path d="M90 230 C110 110 300 70 430 100 C560 130 600 250 570 350 C540 450 420 500 290 495 C150 490 70 360 90 230 Z" fill="#ece6ff"/>
+      <ellipse cx="270" cy="490" rx="150" ry="18" fill="#e2e8f0"/>
+      <!-- leaves -->
+      <path d="M470 70 C476 30 490 10 500 0 C506 30 500 55 486 74 Z" fill="#6415ff"/>
+      <path d="M496 72 C520 50 545 45 560 48 C548 66 526 78 500 82 Z" fill="#6415ff"/>
+      <ellipse cx="575" cy="125" rx="22" ry="10" fill="#6415ff"/>
+      <!-- tablet -->
+      <rect x="350" y="70" width="230" height="300" rx="14" fill="#3f3d56"/>
+      <circle cx="465" cy="88" r="5" fill="#fff"/>
+      <circle cx="465" cy="352" r="9" fill="#fff"/>
+      <rect x="375" y="160" width="42" height="56" rx="3" fill="#f1f1f8"/>
+      <rect x="381" y="170" width="30" height="16" rx="2" fill="#8b5cf6"/>
+      <rect x="388" y="196" width="18" height="4" fill="#6415ff"/>
+      <path d="M422 188 L438 188" stroke="#fff" stroke-width="3"/><path d="M434 183 L440 188 L434 193" fill="#fff"/>
+      <rect x="444" y="160" width="42" height="56" rx="3" fill="#f1f1f8"/>
+      <rect x="452" y="170" width="16" height="8" fill="#8b5cf6"/>
+      <rect x="452" y="186" width="26" height="3" fill="#6415ff"/><rect x="452" y="194" width="26" height="3" fill="#6415ff"/>
+      <path d="M490 182 L506 170 M490 194 L506 206" stroke="#fff" stroke-width="3"/>
+      <rect x="512" y="122" width="44" height="60" rx="3" fill="#f1f1f8"/>
+      <rect x="518" y="130" width="32" height="12" fill="#8b5cf6"/><rect x="518" y="147" width="32" height="12" fill="#8b5cf6"/>
+      <rect x="518" y="166" width="8" height="3" fill="#3f3d56"/><rect x="530" y="166" width="8" height="3" fill="#3f3d56"/><rect x="542" y="166" width="8" height="3" fill="#3f3d56"/>
+      <rect x="512" y="200" width="44" height="58" rx="3" fill="#f1f1f8"/>
+      <rect x="518" y="208" width="12" height="12" fill="#8b5cf6"/>
+      <rect x="518" y="228" width="32" height="3" fill="#6415ff"/><rect x="518" y="236" width="32" height="3" fill="#6415ff"/><rect x="518" y="244" width="32" height="3" fill="#6415ff"/>
+      <!-- easel board -->
+      <rect x="250" y="220" width="6" height="40" fill="#2f2e41"/>
+      <rect x="244" y="256" width="18" height="6" fill="#2f2e41"/>
+      <rect x="200" y="262" width="140" height="94" fill="#f7f7fb" stroke="#e2e8f0"/>
+      <g fill="none" stroke="#3f3d56" stroke-width="2">
+        <rect x="214" y="290" width="20" height="38"/><path d="M216 296 L232 316 M232 296 L216 316"/>
+        <path d="M240 308 L254 308 M250 304 L254 308 L250 312"/>
+        <rect x="260" y="290" width="20" height="38"/><path d="M262 296 L278 310 M278 296 L262 310"/><rect x="264" y="314" width="12" height="4"/>
+        <path d="M286 302 L296 296 M286 316 L296 322"/>
+        <rect x="302" y="272" width="22" height="32"/><rect x="306" y="278" width="14" height="6"/><rect x="306" y="290" width="14" height="6"/>
+        <rect x="302" y="312" width="22" height="34"/><rect x="306" y="318" width="6" height="6"/><path d="M306 330 L320 330 M306 336 L320 336"/>
+      </g>
+      <!-- stool -->
+      <rect x="226" y="372" width="96" height="8" fill="#3f3d56"/>
+      <path d="M236 380 L226 480 M312 380 L322 480 M274 380 L274 470" stroke="#3f3d56" stroke-width="5"/>
+      <line x1="232" y1="430" x2="316" y2="430" stroke="#3f3d56" stroke-width="4"/>
+      <!-- woman -->
+      <path d="M150 220 C140 190 150 165 172 165 C196 166 202 190 196 214 C194 240 186 270 176 290 L150 286 C146 260 152 240 150 220 Z" fill="#2f2e41"/>
+      <path d="M186 196 C190 196 192 204 188 210 Z" fill="#a0616a"/>
+      <path d="M152 240 C160 226 186 226 194 244 C200 270 196 300 190 320 L156 320 C150 300 146 268 152 240 Z" fill="#6415ff"/>
+      <path d="M190 260 C204 284 214 296 222 300 L218 308 C204 300 192 290 182 276 Z" fill="#6415ff"/>
+      <path d="M156 318 L190 318 L184 440 L174 440 L172 340 L170 440 L160 440 Z" fill="#2f2e41"/>
+      <path d="M150 440 L178 440 L176 452 L150 452 Z" fill="#2f2e41"/>
+      <path d="M168 444 L192 444 L192 454 L168 454 Z" fill="#2f2e41"/>
+      <circle cx="224" cy="304" r="5" fill="#a0616a"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Treact home"><span class="logo-mark">T</span>Treact</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#features">About</a>
+      <a href="#quality">Blog</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#footer">Contact Us</a>
+      <a href="#" class="login">Login</a>
+      <a href="#hero" class="signup">Sign Up</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="wrap two-col">
+      <div>
+        <h1>Beautiful React Templates <span class="hl">for you.</span></h1>
+        <p class="lead">Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.</p>
+        <form class="signup-form" id="signupForm" novalidate>
+          <input id="email" type="email" placeholder="Your E-mail Address" aria-label="Your e-mail address" required>
+          <button class="btn" type="submit">Get Started</button>
+        </form>
+        <div class="form-note" id="formNote" role="status"></div>
+        <div class="customers">
+          <p>Our Trusted Customers</p>
+          <div class="customer-logos"><span>NORTHWIND</span><span>Brightline</span><span>ATLAS CO.</span></div>
+        </div>
+      </div>
+      <svg class="art" viewBox="0 0 600 480" role="img" aria-label="Woman working at a desk"><use href="#heroArt"/></svg>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap center">
+      <p class="eyebrow">Features</p>
+      <h2>We Have Amazing <span class="hl">Service.</span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="features-grid" style="text-align:left">
+        <div class="feature">
+          <div class="icon-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M13 7l-3 5h4l-3 5"/></svg></div>
+          <div><h3>Secure</h3><p>Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud.</p></div>
+        </div>
+        <div class="feature">
+          <div class="icon-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.5-2 2-5 2"/></svg></div>
+          <div><h3>24/7 Support</h3><p>Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud.</p></div>
+        </div>
+        <div class="feature">
+          <div class="icon-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="8" cy="18" r="2" fill="#fff"/></svg></div>
+          <div><h3>Customizable</h3><p>Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quality" id="quality">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Quality Work</p>
+        <h2>Designed &amp; Developed by <span class="hl">Profressionals.</span></h2>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quam cupiditate commodi qui excepturi laborum adipisci officiis, corporis possimus. Reiciendis?</p>
+        <a href="#steps" class="btn">Learn More</a>
+      </div>
+      <div class="shot-wrap art-col">
+        <div class="shot"><svg class="art" viewBox="0 0 800 460" role="img" aria-label="Screenshot of the Treact homepage"><use href="#miniSite"/></svg></div>
+        <div class="dots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="wrap two-col">
+      <div class="art-col">
+        <div class="laptop">
+          <div class="laptop-screen"><svg viewBox="0 0 800 460" role="img" aria-label="Treact homepage on a laptop"><use href="#miniSite"/></svg></div>
+          <div class="laptop-base"></div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Steps</p>
+        <h2>Easy to <span class="hl">Get Started.</span></h2>
+        <ol class="steps">
+          <li><span class="step-num">01</span><div><h3>Register</h3><p>Create an account with us using Google or Facebook.</p></div></li>
+          <li><span class="step-num">02</span><div><h3>Download</h3><p>Browse and Download the template that you like from the marketplace.</p></div></li>
+          <li><span class="step-num">03</span><div><h3>Run</h3><p>Follow the instructions to setup and customize the template to your needs.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="values" id="values">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Values</p>
+        <h2>We Always Abide by Our <span class="hl">Principles.</span></h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="values-grid">
+          <div class="value">
+            <h3><span class="value-icon green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Affordable</h3>
+            <p>We promise to offer you the best rate we can - at par with the industry standard.</p>
+          </div>
+          <div class="value">
+            <h3><span class="value-icon red"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M9 7v13M15 7v13"/></svg></span>Professionalism</h3>
+            <p>We assure you that our templates are designed and created by professional designers.</p>
+          </div>
+        </div>
+        <a href="#pricing" class="btn">Learn More</a>
+      </div>
+      <svg class="art art-col" viewBox="0 0 600 520" role="img" aria-label="Designer sketching wireframes beside a tablet"><use href="#valuesArt"/></svg>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap center">
+      <p class="eyebrow">Pricing</p>
+      <h2>Reasonable &amp; Flexible <span class="hl">Plans.</span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="plans">
+        <div class="plan teal">
+          <div class="plan-head"><div class="plan-name">Personal</div><div class="plan-price">$17.99</div><div class="plan-period">Monthly</div></div>
+          <div class="plan-body"><h4>For Individuals</h4><ul><li>30 Templates</li><li>7 Landing Pages</li><li>12 Internal Pages</li><li>Basic Assistance</li></ul></div>
+          <div class="plan-foot"><button class="plan-btn" type="button">BUY NOW</button></div>
+        </div>
+        <div class="plan featured">
+          <div class="plan-head"><div class="plan-name">Business</div><div class="plan-price">$37.99</div><div class="plan-period">Monthly</div></div>
+          <div class="plan-body"><h4>For Small Businesses</h4><ul><li>60 Templates</li><li>15 Landing Pages</li><li>22 Internal Pages</li><li>Priority Assistance</li></ul></div>
+          <div class="plan-foot"><button class="plan-btn" type="button">BUY NOW</button></div>
+        </div>
+        <div class="plan red">
+          <div class="plan-head"><div class="plan-name">Enterprise</div><div class="plan-price">$57.99</div><div class="plan-period">Monthly</div></div>
+          <div class="plan-body"><h4>For Large Companies</h4><ul><li>90 Templates</li><li>27 Landing Pages</li><li>37 Internal Pages</li><li>Personal Assistance</li></ul></div>
+          <div class="plan-foot"><button class="plan-btn" type="button">BUY NOW</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="logo-mark">T</span>Treact</a>
+    <div class="links"><a href="#features">About</a><a href="#quality">Blog</a><a href="#pricing">Pricing</a><a href="#footer">Contact Us</a></div>
+    <small>&copy; 2026 Treact. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+  document.getElementById('signupForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('email');
+    const note = document.getElementById('formNote');
+    note.textContent = /\S+@\S+\.\S+/.test(email.value)
+      ? 'Thanks! You’re on the list.'
+      : 'Enter a valid e-mail address, like name@example.com.';
+  });
+</script>
+
+</body></html>

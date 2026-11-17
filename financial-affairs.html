@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial Affairs LLC</title>
+<meta name="description" content="Financial Affairs LLC — tax preparation, IRS representation, bookkeeping, payroll and business advisory by Jaimee J Paine, Enrolled Agent.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Outfit:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141517; --ink-2:#1d1f22; --ink-3:#272a2e;
+  --chalk:#f2ede3; --chalk-dim:#b9b3a8; --line:rgba(242,237,227,.14);
+  --sand:#e0ab6c; --clay:#c8683f; --sage:#93a68c;
+  --cream:#f5efe4; --cream-2:#ebe2d2; --text-dark:#1d1f22; --text-mid:#55504a;
+  --radius:18px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--chalk);font-family:Outfit,system-ui,sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.grain::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+.eyebrow{font-family:Caveat,cursive;font-size:1.6rem;color:var(--sand);display:block;margin-bottom:.4rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:999px;font-weight:500;text-decoration:none;font-size:1rem;transition:transform .2s,background .2s,color .2s;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--sand);color:var(--ink)}
+.btn-primary:hover{background:var(--chalk);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--chalk)}
+.btn-ghost:hover{border-color:var(--chalk);transform:translateY(-2px)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,backdrop-filter .3s}
+nav.scrolled{background:rgba(20,21,23,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{font-family:Fraunces,serif;font-size:1.35rem;text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.brand svg{width:38px;height:28px}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:.95rem;color:var(--chalk-dim);transition:color .2s}
+.nav-links a:hover{color:var(--chalk)}
+.nav-links .btn{padding:.6rem 1.2rem;color:var(--ink)}
+.burger{display:none;background:none;border:0;color:var(--chalk);cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:currentColor;margin:5px 0;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:300}
+.hero h1 em{font-style:italic;color:var(--sand);font-weight:500}
+.hero p.lead{font-size:1.2rem;color:var(--chalk-dim);max-width:34rem;margin:1.6rem 0 2.2rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+.draw path,.draw ellipse{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 3s ease forwards}
+.draw .d2{animation-delay:.5s}.draw .d3{animation-delay:1s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sun{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(224,171,108,.18),transparent 65%);right:-120px;top:10%;pointer-events:none}
+
+/* CREDENTIALS STRIP */
+.creds{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+.creds-in{display:grid;grid-template-columns:repeat(5,1fr);text-align:center}
+.cred{padding:1.8rem .8rem;border-right:1px solid var(--line)}
+.cred:last-child{border-right:0}
+.cred b{display:block;font-family:Fraunces,serif;font-size:1.7rem;font-weight:500;color:var(--sand)}
+.cred span{font-size:.85rem;color:var(--chalk-dim)}
+
+section{padding:110px 0}
+.sec-head{max-width:640px;margin-bottom:3.5rem}
+.sec-head h2{font-size:clamp(2rem,4vw,3.1rem)}
+.sec-head p{color:var(--chalk-dim);margin-top:1rem;font-size:1.08rem}
+
+/* SERVICES */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.tab{background:transparent;border:1.5px solid var(--line);color:var(--chalk-dim);padding:.7rem 1.3rem;border-radius:999px;font-family:inherit;font-size:.95rem;cursor:pointer;transition:.2s}
+.tab:hover{color:var(--chalk);border-color:var(--chalk-dim)}
+.tab.active{background:var(--chalk);color:var(--ink);border-color:var(--chalk)}
+.panel{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.2rem}
+.tabs,.burger,.finder-sec{display:none}
+.js .tabs{display:flex}.js .finder-sec{display:block}
+.js .panel{display:none;margin-bottom:0}
+.js .panel.active{display:grid;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.card{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;transition:transform .25s,border-color .25s,background .25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);border-color:rgba(224,171,108,.5);background:var(--ink-3)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:rgba(224,171,108,.12);display:grid;place-items:center;margin-bottom:1.2rem;color:var(--sand)}
+.card .ic svg{width:24px;height:24px}
+.card h3{font-size:1.3rem;margin-bottom:.6rem}
+.card p{color:var(--chalk-dim);font-size:.96rem}
+.card ul{list-style:none;margin-top:1rem;font-size:.9rem;color:var(--chalk-dim)}
+.card li{padding:.25rem 0 .25rem 1.2rem;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:.8em;width:7px;height:1.5px;background:var(--sand)}
+
+/* EA FEATURE (light) */
+.light{background:var(--cream);color:var(--text-dark)}
+.light .sec-head p,.light p{color:var(--text-mid)}
+.light .eyebrow{color:var(--clay)}
+.ea-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ea-badge{background:var(--ink);color:var(--chalk);border-radius:28px;padding:3rem;position:relative;overflow:hidden}
+.ea-badge .big{font-family:Fraunces,serif;font-size:6rem;line-height:1;color:var(--sand);font-weight:300}
+.ea-badge h3{font-size:1.6rem;margin:.6rem 0 1rem}
+.ea-badge p{color:var(--chalk-dim)}
+.ea-badge svg.mesa{position:absolute;right:-20px;bottom:-10px;width:260px;opacity:.15}
+.ea-points{display:grid;gap:1.4rem;margin-top:2rem}
+.ea-point{display:flex;gap:1rem}
+.ea-point .n{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--clay);color:var(--clay);display:grid;place-items:center;font-family:Fraunces,serif;font-weight:500}
+.ea-point h4{font-family:Fraunces,serif;font-weight:500;font-size:1.15rem;color:var(--text-dark)}
+.ea-point p{font-size:.96rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;position:relative;overflow:hidden}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.portrait .name{position:relative;font-family:Fraunces,serif;font-size:2rem}
+.portrait .ttl{position:relative;color:var(--sand);font-size:.95rem;letter-spacing:.08em}
+.degrees{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.degree{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.degree b{font-family:Fraunces,serif;font-weight:500;color:var(--sand);font-size:1.2rem}
+.degree span{display:block;color:var(--chalk-dim);font-size:.9rem}
+.about p{color:var(--chalk-dim);margin-top:1rem;font-size:1.05rem}
+.teach{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;margin-top:1.8rem;padding:1.3rem 1.5rem;border-radius:16px;background:rgba(224,171,108,.08);border:1px solid rgba(224,171,108,.35)}
+.teach-yr b{display:block;font-family:Fraunces,serif;font-size:2.4rem;font-weight:500;color:var(--sand);line-height:1}
+.teach-yr span{font-size:.85rem;color:var(--chalk-dim)}
+.teach-sub{display:flex;flex-wrap:wrap;gap:.5rem}
+.teach-sub span{border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;font-size:.88rem}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s;position:relative}
+.step{padding:2rem 1.6rem;border-top:2px solid var(--line);position:relative;transition:border-color .3s}
+.step:hover{border-color:var(--sand)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:Fraunces,serif;font-size:2.6rem;font-weight:300;color:var(--sand);display:block;margin-bottom:.8rem}
+.step h3{font-size:1.25rem;margin-bottom:.5rem}
+.step p{color:var(--chalk-dim);font-size:.95rem}
+
+/* FINDER */
+.finder{background:var(--ink-2);border:1px solid var(--line);border-radius:28px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.finder h2{font-size:2.2rem}
+.opts{display:grid;gap:.7rem;margin-top:1.6rem}
+.opt{text-align:left;background:transparent;border:1.5px solid var(--line);color:var(--chalk);border-radius:14px;padding:1rem 1.2rem;font-family:inherit;font-size:1rem;cursor:pointer;transition:.2s}
+.opt:hover{border-color:var(--chalk-dim)}
+.opt.active{border-color:var(--sand);background:rgba(224,171,108,.08)}
+.result{background:var(--ink);border-radius:20px;padding:2.2rem;border:1px dashed rgba(224,171,108,.4);display:flex;flex-direction:column;justify-content:center;min-height:300px}
+.result h3{font-size:1.6rem;color:var(--sand);margin-bottom:.8rem}
+.result p{color:var(--chalk-dim)}
+.result ul{margin:1rem 0 1.6rem 1.1rem;color:var(--chalk-dim)}
+.result .placeholder{font-family:Caveat,cursive;font-size:1.7rem;color:var(--chalk-dim);text-align:center}
+
+/* DEADLINES */
+.dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.dl{background:var(--cream-2);border-radius:var(--radius);padding:1.6rem;display:flex;gap:1.2rem;align-items:flex-start}
+.dl .date{flex:none;width:64px;text-align:center;background:var(--ink);color:var(--chalk);border-radius:12px;padding:.6rem 0}
+.dl .date small{display:block;font-size:.7rem;letter-spacing:.12em;color:var(--sand)}
+.dl .date b{font-family:Fraunces,serif;font-size:1.7rem;font-weight:500;line-height:1}
+.dl h4{font-family:Fraunces,serif;font-weight:500;font-size:1.1rem;color:var(--text-dark)}
+.dl p{font-size:.92rem}
+.note{font-size:.85rem;margin-top:1.5rem;color:var(--text-mid)}
+
+/* FAQ */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line);padding:1.4rem 0}
+summary{list-style:none;cursor:pointer;font-family:Fraunces,serif;font-size:1.25rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary .plus{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .3s,border-color .3s;color:var(--sand)}
+details[open] summary .plus{transform:rotate(45deg);border-color:var(--sand)}
+details p{color:var(--chalk-dim);margin-top:.9rem;max-width:44rem}
+
+/* CONTACT */
+.contact{background:var(--ink-2);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.contact h2{font-size:clamp(2.2rem,4.5vw,3.4rem)}
+.c-line{display:flex;align-items:center;gap:1rem;margin-top:1.4rem;text-decoration:none;font-size:1.2rem}
+.c-line .ic{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--sand);transition:.2s}
+.c-line:hover .ic{background:var(--sand);color:var(--ink);border-color:var(--sand)}
+.c-line svg{width:20px;height:20px}
+form{display:grid;gap:1rem}
+label{font-size:.85rem;color:var(--chalk-dim);display:grid;gap:.4rem}
+input,select,textarea{font-family:inherit;font-size:1rem;background:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:.9rem 1rem;color:var(--chalk);transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sand)}
+textarea{min-height:120px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-note{font-size:.8rem;color:var(--chalk-dim)}
+
+footer{padding:3rem 0;border-top:1px solid var(--line);color:var(--chalk-dim);font-size:.88rem}
+.foot-in{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center}
+
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero-grid,.ea-grid,.about-grid,.finder,.contact-grid{grid-template-columns:1fr}
+  .hero-art{max-width:460px;margin:0 auto}
+  .panel,.panel.active{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .dl-grid{grid-template-columns:1fr 1fr}
+  .creds-in{grid-template-columns:repeat(3,1fr)}
+  .cred:nth-child(3){border-right:0}
+  .cred:nth-child(n+4){border-top:1px solid var(--line)}
+}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  section{padding:80px 0}
+  .nav-links{position:fixed;top:76px;left:0;right:0;flex-direction:column;background:var(--ink);padding:2rem;gap:1.4rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s}
+  .nav-links.open{transform:none}
+  .js .burger{display:block}
+  .panel,.panel.active,.steps,.dl-grid,.degrees,.row2{grid-template-columns:1fr}
+  html:not(.js) .nav-links{display:none}
+  .creds-in{grid-template-columns:1fr 1fr}
+  .cred{border-right:1px solid var(--line)!important;border-top:1px solid var(--line)}
+  .cred:nth-child(2n){border-right:0!important}
+  .cred:nth-child(-n+2){border-top:0}
+  .cred:last-child{grid-column:span 2;border-right:0!important}
+  .finder,.ea-badge{padding:1.8rem}
+  .hero{min-height:auto}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.draw path,.draw ellipse{stroke-dashoffset:0}.reveal{opacity:1;transform:none}}
+
+/* ===== CHAT ASSISTANT ===== */
+.fa-launch{position:fixed;right:22px;bottom:22px;z-index:200;display:flex;align-items:center;gap:.6rem;background:var(--sand);color:var(--ink);border:0;border-radius:999px;padding:.9rem 1.3rem .9rem 1.1rem;font-family:inherit;font-size:1rem;font-weight:500;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s,background .2s}
+.fa-launch:hover{transform:translateY(-2px);background:var(--chalk)}
+.fa-launch svg{width:32px;height:32px}
+.fa-launch.hide,html:not(.js) .fa-launch{display:none}
+.fa-chat{position:fixed;right:22px;bottom:22px;z-index:201;width:380px;height:min(640px,calc(100vh - 44px));display:none;flex-direction:column;background:var(--ink-2);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.5);overflow:hidden;color:var(--chalk)}
+.fa-chat.open{display:flex;animation:fade .3s ease}
+.fa-head{display:flex;align-items:center;gap:.8rem;padding:1rem 1.1rem;border-bottom:1px solid var(--line);background:var(--ink)}
+.fa-av{flex:none;width:40px;height:40px;border-radius:50%;background:rgba(224,171,108,.14);display:grid;place-items:center}
+.fa-av svg{width:26px;height:20px}
+.fa-head b{display:block;font-family:Fraunces,serif;font-weight:500;font-size:1.05rem}
+.fa-head small{display:block;color:var(--chalk-dim);font-size:.78rem;line-height:1.3;margin-top:.15rem}
+.fa-x{margin-left:auto;background:none;border:0;color:var(--chalk-dim);cursor:pointer;padding:6px;border-radius:8px}
+.fa-x:hover{color:var(--chalk)}
+.fa-x svg{width:20px;height:20px}
+.fa-log{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:.7rem;overscroll-behavior:contain}
+.fa-m{max-width:88%;padding:.75rem .95rem;border-radius:16px;font-size:.95rem;line-height:1.5;overflow-wrap:anywhere}
+.fa-m.bot{background:var(--ink-3);border-bottom-left-radius:4px;align-self:flex-start}
+.fa-m.me{background:var(--sand);color:var(--ink);border-bottom-right-radius:4px;align-self:flex-end;font-weight:400}
+.fa-m ul{margin:.4rem 0 0 1.1rem}
+.fa-m a{color:var(--sand)}
+.fa-m p+p,.fa-m p+ul,.fa-m ul+p{margin-top:.5rem}
+.fa-chips{display:flex;flex-wrap:wrap;gap:.45rem;align-self:flex-start;max-width:100%}
+.fa-chip{background:transparent;border:1.5px solid rgba(224,171,108,.45);color:var(--chalk);border-radius:999px;padding:.45rem .85rem;font-family:inherit;font-size:.86rem;cursor:pointer;transition:.2s}
+.fa-chip:hover{background:rgba(224,171,108,.12);border-color:var(--sand)}
+.fa-hand{align-self:stretch;border:1px dashed rgba(224,171,108,.45);border-radius:16px;padding:.9rem;display:grid;gap:.5rem;background:var(--ink)}
+.fa-hand p{font-size:.88rem;color:var(--chalk-dim)}
+.fa-hand a,.fa-hand button{display:flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;border-radius:999px;padding:.6rem .9rem;font-family:inherit;font-size:.9rem;font-weight:500;cursor:pointer;border:1.5px solid var(--line);background:transparent;color:var(--chalk)}
+.fa-hand a:hover,.fa-hand button:hover{border-color:var(--chalk-dim)}
+.fa-hand .pri{background:var(--sand);color:var(--ink);border-color:var(--sand)}
+.fa-fb{display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--chalk-dim);margin-top:-.3rem}
+.fa-fb button{background:none;border:1px solid var(--line);border-radius:999px;color:var(--chalk-dim);cursor:pointer;padding:.15rem .6rem;font-size:.85rem}
+.fa-fb button:hover{color:var(--chalk);border-color:var(--chalk-dim)}
+.fa-typing{display:flex;gap:4px;padding:.95rem 1rem}
+.fa-typing i{width:6px;height:6px;border-radius:50%;background:var(--chalk-dim);animation:fa-b 1s infinite}
+.fa-typing i:nth-child(2){animation-delay:.15s}.fa-typing i:nth-child(3){animation-delay:.3s}
+@keyframes fa-b{50%{opacity:.25;transform:translateY(-3px)}}
+.fa-in{display:flex;gap:.5rem;padding:.8rem .8rem .5rem;border-top:1px solid var(--line);background:var(--ink)}
+.fa-in input{flex:1;min-width:0;padding:.7rem 1rem;border-radius:999px;font-size:16px}
+.fa-in button{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--sand);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.fa-in button svg{width:20px;height:20px}
+.fa-note{font-size:.72rem;color:var(--chalk-dim);text-align:center;padding:0 .8rem .7rem;background:var(--ink)}
+.fa-hang{position:fixed;z-index:202;width:150px;height:120px;pointer-events:none}
+.fa-branch{position:absolute;top:4px;left:0;right:0;height:8px;border-radius:6px;background:repeating-linear-gradient(100deg,transparent 0 14px,rgba(0,0,0,.18) 14px 16px,transparent 16px 31px),linear-gradient(#86603e,#5b3d25);box-shadow:0 2px 0 rgba(0,0,0,.35)}
+.fa-branch i{position:absolute;width:16px;height:10px;border-radius:0 100% 0 100%;background:linear-gradient(135deg,#a9bd9f,#6f8a66);transform-origin:0 50%;animation:fa-rustle 1.6s ease-in-out infinite alternate}
+.fa-branch i::after{content:"";position:absolute;left:1px;top:50%;width:13px;height:1px;background:rgba(40,60,35,.45);transform:rotate(-14deg)}
+@keyframes fa-rustle{from{rotate:-6deg}to{rotate:6deg}}
+.fa-sloth{position:absolute;top:0;right:24px;width:80px;height:110px;transform-origin:50% 8px;animation:fa-swing 1.4s ease-in-out both}
+.fa-sloth svg{width:100%;height:100%;overflow:visible}
+@keyframes fa-swing{0%{transform:rotate(-40deg);opacity:0}15%{opacity:1}35%{transform:rotate(22deg)}55%{transform:rotate(-11deg)}72%{transform:rotate(5deg)}86%{transform:rotate(-2deg)}100%{transform:rotate(0);opacity:1}}
+.fa-sloth .legs{transform-box:view-box;transform-origin:40px 84px;animation:fa-dangle .9s ease-in-out infinite alternate}
+.fa-sloth .head{transform-box:view-box;transform-origin:40px 44px;animation:fa-look 2.2s ease-in-out infinite alternate}
+.fa-sloth .eyes{transform-box:fill-box;transform-origin:50% 50%;animation:fa-blink 2.6s infinite}
+.fa-sloth .fig{transform-box:view-box;transform-origin:29px 9px;transition:transform .5s ease}
+.fa-sloth .armR{transform-box:view-box;transform-origin:53px 47px}
+@keyframes fa-dangle{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@keyframes fa-look{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+@keyframes fa-blink{0%,88%,100%{transform:scaleY(1)}93%{transform:scaleY(.1)}}
+.fa-sloth.wave .fig{transform:rotate(-5deg)}
+.fa-sloth.wave .head{animation:fa-tilt .6s ease forwards}
+.fa-sloth.wave .armR{animation:fa-wave 1.3s ease-in-out forwards}
+@keyframes fa-tilt{to{transform:rotate(9deg)}}
+@keyframes fa-wave{0%{transform:rotate(0)}22%{transform:rotate(80deg)}36%{transform:rotate(55deg)}50%{transform:rotate(85deg)}64%{transform:rotate(55deg)}78%{transform:rotate(85deg)}100%{transform:rotate(70deg)}}
+.fa-hi{position:absolute;right:98px;top:26px;background:var(--chalk);color:var(--ink);font-family:Caveat,cursive;font-size:1.4rem;font-weight:700;line-height:1;padding:.35rem .75rem .45rem;border-radius:14px 14px 4px 14px;opacity:0;white-space:nowrap;transform-origin:100% 100%;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+@media (max-width:720px){
+  .fa-chat{right:0;left:0;bottom:0;width:auto;height:88vh;height:88dvh;border-radius:22px 22px 0 0}
+  .fa-launch{right:16px;bottom:16px;padding:.8rem}
+  .fa-launch svg{width:38px;height:38px}
+  .fa-launch span{display:none}
+}
+</style>
+</head>
+<body class="grain">
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="Financial Affairs LLC home">
+      <svg viewBox="0 0 76 56" fill="none" stroke="#f2ede3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="14" cy="16" rx="11" ry="13"/><path d="M4 54 18 30l7 14 3-28h16l6 32h24"/></svg>
+      Financial Affairs
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ea">Why an EA</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#deadlines">Deadlines</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="btn btn-primary">Book a consult</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Tax &amp; accounting, rooted in Arizona</span>
+      <h1>Your finances,<br>handled with <em>clarity</em> and care.</h1>
+      <p class="lead">Financial Affairs LLC prepares taxes, resolves IRS problems, keeps your books in order and helps your business grow — guided by an IRS Enrolled Agent and college instructor who has taught accounting, business and paralegal studies since 2007.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Schedule a consultation
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:+19285301078" class="btn btn-ghost">(928) 530-1078</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 500 420" fill="none" stroke="#f2ede3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="draw" aria-hidden="true">
+        <g class="sun">
+          <ellipse cx="120" cy="120" rx="68" ry="80" />
+          <ellipse cx="120" cy="120" rx="58" ry="70" stroke="#e0ab6c" stroke-width="1.5" stroke-dasharray="3 7" style="animation:none;stroke-dashoffset:0"/>
+        </g>
+        <path class="d2" d="M20 400c60 0 90-6 110-50s30-150 40-160c12 6 30 60 50 100 8 16 18 10 18-8 0-40-20-120-14-150 4-14 30-10 90-8l20 0c6 0 8 4 8 10l6 150c2 30 14 60 40 76 14 8 30 6 92 4"/>
+        <path class="d3" d="M30 408h440" stroke="#e0ab6c" stroke-width="2" stroke-dasharray="2 10"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="creds">
+  <div class="wrap creds-in">
+    <div class="cred"><b>EA</b><span>IRS Enrolled Agent</span></div>
+    <div class="cred"><b>MBA</b><span>Business Administration</span></div>
+    <div class="cred"><b>MHRM</b><span>Human Resource Mgmt.</span></div>
+    <div class="cred"><b>MSET</b><span>M.S. Educational Tech.</span></div>
+    <div class="cred"><b>BSTM</b><span>B.S. Technical Mgmt.</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Everything your money touches, under one roof.</h2>
+      <p>From a single W-2 to a growing company with payroll, Financial Affairs covers the full range of tax and accounting work — so you're never juggling three different professionals.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist">
+      <button class="tab active" data-tab="ind" role="tab">Individuals &amp; Families</button>
+      <button class="tab" data-tab="biz" role="tab">Businesses</button>
+      <button class="tab" data-tab="irs" role="tab">IRS Problems</button>
+      <button class="tab" data-tab="adv" role="tab">Advisory</button>
+    </div>
+
+    <!-- INDIVIDUALS -->
+    <div class="panel active" id="ind">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Personal Tax Returns</h3><p>Accurate federal and state filing, prepared to capture every credit and deduction you qualify for.</p>
+        <ul><li>Form 1040 &amp; all schedules</li><li>Arizona &amp; multi-state returns</li><li>Itemized vs. standard analysis</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5M12 7v5l3 3"/></svg></div>
+        <h3>Prior-Year &amp; Amended Returns</h3><p>Behind on filing or spotted a mistake? We catch you up and correct the record.</p>
+        <ul><li>Unfiled back-year returns</li><li>Form 1040-X amendments</li><li>Missed refund recovery</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M10 21v-6h4v6"/></svg></div>
+        <h3>Life Events</h3><p>Guidance when big changes hit your taxes.</p>
+        <ul><li>Marriage, divorce &amp; new dependents</li><li>Buying or selling a home</li><li>Retirement income &amp; Social Security</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3>Investments &amp; Side Income</h3><p>Clean reporting for the income that doesn't come on a W-2.</p>
+        <ul><li>Stocks, crypto &amp; capital gains</li><li>Rental property (Schedule E)</li><li>Gig work &amp; 1099 income</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2 3-2s3 .8 3 2-1 1.8-3 2.5-3 1.2-3 2.5 1.3 2 3 2 3-.6 3-2"/></svg></div>
+        <h3>Tax Planning</h3><p>Year-round strategy, not just a once-a-year scramble.</p>
+        <ul><li>Withholding &amp; estimated payments</li><li>Retirement contribution strategy</li><li>Education &amp; family credits</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <h3>Estates &amp; Trusts</h3><p>Fiduciary returns handled with patience during difficult times.</p>
+        <ul><li>Form 1041 trust &amp; estate returns</li><li>Final individual returns</li><li>Beneficiary K-1s</li></ul></div>
+    </div>
+
+    <!-- BUSINESS -->
+    <div class="panel" id="biz">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Business Tax Returns</h3><p>Filing for every common business structure.</p>
+        <ul><li>Sole proprietors (Schedule C)</li><li>Partnerships &amp; LLCs (1065)</li><li>S corps (1120-S) &amp; C corps (1120)</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <h3>Bookkeeping</h3><p>Organized, reconciled books every month, so tax time is easy and decisions are informed.</p>
+        <ul><li>Bank &amp; card reconciliation</li><li>Categorization &amp; cleanup</li><li>Catch-up bookkeeping</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M16 4a3.5 3.5 0 0 1 0 7M22 20c0-3-2-5-5-5.7"/></svg></div>
+        <h3>Payroll</h3><p>Pay your people right and on time, with filings handled.</p>
+        <ul><li>Payroll processing</li><li>Quarterly 941 &amp; annual 940</li><li>W-2 &amp; 1099 preparation</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6"/></svg></div>
+        <h3>Business Formation</h3><p>Start on the right foot with the structure that fits.</p>
+        <ul><li>Entity selection (LLC, S corp…)</li><li>EIN &amp; registrations</li><li>S corp election analysis</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Financial Statements</h3><p>Clear reports for lenders, partners and your own planning.</p>
+        <ul><li>Profit &amp; loss statements</li><li>Balance sheets</li><li>Cash-flow tracking</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Nonprofits</h3><p>Compliance support for mission-driven organizations.</p>
+        <ul><li>Form 990 series returns</li><li>Fund tracking</li><li>Board-ready reporting</li></ul></div>
+    </div>
+
+    <!-- IRS -->
+    <div class="panel" id="irs">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>IRS Notices &amp; Letters</h3><p>Don't panic over a letter. We read it, explain it and respond for you.</p>
+        <ul><li>CP2000 &amp; underreporting notices</li><li>Balance-due letters</li><li>State tax notices</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div>
+        <h3>Audit Representation</h3><p>As an Enrolled Agent, Jaimee can represent you directly before the IRS.</p>
+        <ul><li>Correspondence &amp; office audits</li><li>Document preparation</li><li>Appeals support</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h3>Payment Plans</h3><p>Turn a tax debt into something manageable.</p>
+        <ul><li>Installment agreements</li><li>Currently-not-collectible status</li><li>Stopping levies &amp; garnishments</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+        <h3>Offer in Compromise</h3><p>When paying in full isn't realistic, we evaluate whether a settlement is possible.</p>
+        <ul><li>Eligibility analysis</li><li>Financial statement prep</li><li>Negotiation with the IRS</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Penalty Abatement</h3><p>Request relief from penalties for reasonable cause or first-time abatement.</p>
+        <ul><li>First-time abatement</li><li>Reasonable-cause letters</li><li>Interest review</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11h-6"/></svg></div>
+        <h3>Innocent Spouse Relief</h3><p>Help separating your liability from a spouse's or ex-spouse's tax errors.</p>
+        <ul><li>Form 8857 preparation</li><li>Injured spouse claims</li><li>Supporting documentation</li></ul></div>
+    </div>
+
+    <!-- ADVISORY -->
+    <div class="panel" id="adv">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Business Strategy</h3><p>MBA-level insight into pricing, profitability and growth decisions.</p>
+        <ul><li>Budgeting &amp; forecasting</li><li>Profitability analysis</li><li>KPIs that matter</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg></div>
+        <h3>HR Consulting</h3><p>Backed by a master's in Human Resource Management.</p>
+        <ul><li>Employee vs. contractor questions</li><li>Compensation &amp; benefits structure</li><li>Hiring &amp; onboarding processes</li></ul></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+        <h3>Systems &amp; Process</h3><p>Technical-management know-how applied to your back office.</p>
+        <ul><li>Accounting software setup</li><li>Workflow automation</li><li>Recordkeeping systems</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="ea">
+  <div class="wrap ea-grid">
+    <div class="ea-badge reveal">
+      <div class="big">EA</div>
+      <h3>Enrolled Agent</h3>
+      <p>The highest credential the IRS awards. Enrolled Agents are federally licensed tax practitioners who have demonstrated expertise across every area of taxation and hold unlimited rights to represent taxpayers before the IRS.</p>
+      <svg class="mesa" viewBox="0 0 300 200" fill="none" stroke="#f2ede3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M0 190c40 0 60-10 70-50l20-90 30 70 6-100h70l20 120c6 30 20 50 84 50"/></svg>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Why it matters</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem)">A tax specialist who can stand beside you.</h2>
+      <div class="ea-points">
+        <div class="ea-point"><div class="n">1</div><div><h4>Licensed by the U.S. Treasury</h4><p>EAs earn their license by passing a comprehensive IRS exam covering individual and business tax, plus representation.</p></div></div>
+        <div class="ea-point"><div class="n">2</div><div><h4>Unlimited representation rights</h4><p>An EA can speak with the IRS on your behalf for audits, collections and appeals — in any state.</p></div></div>
+        <div class="ea-point"><div class="n">3</div><div><h4>Always current</h4><p>Enrolled Agents must complete continuing education every year to keep up with changing tax law.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="portrait reveal">
+      <svg viewBox="0 0 400 500" fill="none" stroke="rgba(242,237,227,.12)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="xMidYMax slice"><ellipse cx="290" cy="110" rx="50" ry="58"/><path d="M0 420c50 0 70-10 85-50l18-110 22 70 10-140h80l18 160c6 40 30 70 167 70"/></svg>
+      <div class="ttl">ENROLLED AGENT · EDUCATOR · FOUNDER</div>
+      <div class="name">Jaimee J Paine</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Meet your advisor</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem)">An advisor who teaches this for a living.</h2>
+      <p>Jaimee J Paine founded Financial Affairs LLC to give individuals and businesses a single, trusted professional for their tax and financial needs. As an IRS Enrolled Agent, Jaimee handles everything from routine returns to complex IRS resolution.</p>
+      <p>Since 2007, Jaimee has taught college courses in accounting, business and paralegal studies. That classroom experience shows up in every client meeting: clear explanations, no jargon, and the patience to make sure you understand your own finances.</p>
+      <p>Graduate degrees in business administration, human resource management and educational technology, along with a background in technical management, round out a practice built on both expertise and the ability to explain it.</p>
+      <div class="teach">
+        <div class="teach-yr"><b>2007</b><span>Teaching since</span></div>
+        <div class="teach-sub"><span>Accounting</span><span>Business</span><span>Paralegal Studies</span></div>
+      </div>
+      <div class="degrees">
+        <div class="degree"><b>MBA</b><span>Master of Business Administration</span></div>
+        <div class="degree"><b>MHRM</b><span>Master of Human Resource Management</span></div>
+        <div class="degree"><b>MSET</b><span>Master of Science, Educational Technology</span></div>
+        <div class="degree"><b>BSTM</b><span>Bachelor of Science, Technical Management</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Simple from first call to filed.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Reach out</h3><p>Call, email or send the form. Tell us what's going on — no question is too small.</p></div>
+      <div class="step reveal"><h3>Consult</h3><p>We review your situation, explain your options and agree on a clear scope.</p></div>
+      <div class="step reveal"><h3>Gather</h3><p>You share your documents; we'll send a checklist so nothing gets missed.</p></div>
+      <div class="step reveal"><h3>Done right</h3><p>We prepare, review and file — and stay available for questions all year.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="finder-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="finder reveal">
+      <div>
+        <span class="eyebrow">Not sure where to start?</span>
+        <h2>What do you need help with?</h2>
+        <div class="opts" id="opts">
+          <button class="opt" data-k="file">I need my taxes done</button>
+          <button class="opt" data-k="letter">I got a letter from the IRS</button>
+          <button class="opt" data-k="behind">I'm behind on filing or owe money</button>
+          <button class="opt" data-k="start">I'm starting a business</button>
+          <button class="opt" data-k="run">I run a business and need ongoing help</button>
+        </div>
+      </div>
+      <div class="result" id="result">
+        <p class="placeholder">Pick an option and we'll point you in the right direction →</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="deadlines">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Mark your calendar</span>
+      <h2>Key 2027 federal tax deadlines</h2>
+      <p>Missing a deadline can mean penalties and interest. Here are the big ones for the coming year.</p>
+    </div>
+    <div class="dl-grid">
+      <div class="dl reveal"><div class="date"><small>JAN</small><b>15</b></div><div><h4>Q4 estimated tax</h4><p>Final 2026 estimated payment for self-employed and investors.</p></div></div>
+      <div class="dl reveal"><div class="date"><small>MAR</small><b>15</b></div><div><h4>Partnerships &amp; S corps</h4><p>Forms 1065 and 1120-S due, or file an extension.</p></div></div>
+      <div class="dl reveal"><div class="date"><small>APR</small><b>15</b></div><div><h4>Individual returns</h4><p>Form 1040 and C corp returns due; Q1 2027 estimate due.</p></div></div>
+      <div class="dl reveal"><div class="date"><small>JUN</small><b>15</b></div><div><h4>Q2 estimated tax</h4><p>Second 2027 estimated payment due.</p></div></div>
+      <div class="dl reveal"><div class="date"><small>SEP</small><b>15</b></div><div><h4>Extended business returns</h4><p>Extended 1065/1120-S due; Q3 estimate due.</p></div></div>
+      <div class="dl reveal"><div class="date"><small>OCT</small><b>15</b></div><div><h4>Extended individual returns</h4><p>Last day to file a 2026 Form 1040 on extension.</p></div></div>
+    </div>
+    <p class="note">Calendar-year filers. Deadlines can shift for weekends, holidays or disaster relief — contact us to confirm dates for your situation.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good questions</span>
+      <h2>Frequently asked</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>What's the difference between an Enrolled Agent and a CPA?<span class="plus">+</span></summary>
+        <p>Both are licensed professionals. CPAs are licensed by states and often focus on auditing and general accounting. Enrolled Agents are licensed by the IRS and specialize specifically in taxation and representing taxpayers before the IRS. For tax preparation and IRS issues, an EA is a specialist.</p></details>
+      <details><summary>What should I bring for my tax appointment?<span class="plus">+</span></summary>
+        <p>Typically: photo ID, Social Security numbers for everyone on the return, W-2s and 1099s, mortgage and property-tax statements, records of deductible expenses, any IRS letters, and last year's return. We'll send a personalized checklist after your consultation.</p></details>
+      <details><summary>I got a scary letter from the IRS. What should I do?<span class="plus">+</span></summary>
+        <p>Don't ignore it, and don't pay or respond until you understand it. Many notices have response deadlines, so reach out as soon as you can. We'll review the letter, explain what it means and handle the response.</p></details>
+      <details><summary>I haven't filed in several years. Can you help?<span class="plus">+</span></summary>
+        <p>Yes. Getting back into compliance is very common and very fixable. We'll pull your IRS records, prepare the missing returns, and work out a plan for any balance owed.</p></details>
+      <details><summary>Should my LLC elect to be taxed as an S corporation?<span class="plus">+</span></summary>
+        <p>It depends on your profit level, how you pay yourself and your state. For some owners it saves meaningful self-employment tax; for others the added payroll costs outweigh the benefit. We'll run the numbers for your specific situation.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Let's talk</span>
+      <h2>Get your financial affairs in order.</h2>
+      <p style="color:var(--chalk-dim);margin-top:1rem;font-size:1.08rem">Call, email or send a note — we'll get back to you to set up a consultation.</p>
+      <a class="c-line" href="tel:+19285301078"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>(928) 530-1078</a>
+      <a class="c-line" href="mailto:Jaimee@financialaffairs.biz"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg></span>Jaimee@financialaffairs.biz</a>
+    </div>
+    <form class="reveal" id="form" action="mailto:Jaimee@financialaffairs.biz" method="post" enctype="text/plain">
+      <div class="row2">
+        <label>Name<input name="name" required></label>
+        <label>Phone<input name="phone" type="tel"></label>
+      </div>
+      <label>Email<input name="email" type="email" required></label>
+      <label>I'm looking for help with
+        <select name="topic">
+          <option>Personal tax return</option>
+          <option>Business tax return</option>
+          <option>IRS notice or audit</option>
+          <option>Back taxes / unfiled returns</option>
+          <option>Bookkeeping or payroll</option>
+          <option>Business or HR advisory</option>
+          <option>Something else</option>
+        </select></label>
+      <label>Tell us a bit more<textarea name="msg"></textarea></label>
+      <button class="btn btn-primary" type="submit" style="justify-self:start">Send message</button>
+      <p class="form-note">Opens your email app with your message ready to send. Please don't include Social Security numbers or other sensitive details here.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <a href="#top" class="brand" style="font-size:1.1rem">
+      <svg viewBox="0 0 76 56" fill="none" stroke="#f2ede3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="14" cy="16" rx="11" ry="13"/><path d="M4 54 18 30l7 14 3-28h16l6 32h24"/></svg>
+      Financial Affairs LLC</a>
+    <span>Jaimee J Paine, EA · (928) 530-1078 · Jaimee@financialaffairs.biz</span>
+    <span>© <span id="yr"></span> Financial Affairs LLC</span>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+const links=document.getElementById('links');
+document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');document.getElementById(t.dataset.tab).classList.add('active');
+});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const R={
+  file:['Tax Preparation','We\'ll prepare and file your federal and state returns accurately, looking for every deduction and credit you qualify for.',['Individual &amp; family returns','Self-employed &amp; side income','Rental and investment income'],'ind'],
+  letter:['IRS Notice Response','Most IRS letters can be resolved quickly once someone reads them carefully. As an Enrolled Agent, Jaimee can respond and speak to the IRS for you.',['Review and explain the notice','Prepare and send the response','Represent you if it becomes an audit'],'irs'],
+  behind:['Tax Resolution','Falling behind is more common than you think, and there are real options to get back on track.',['File missing back-year returns','Set up a payment plan','Explore penalty relief or settlement'],'irs'],
+  start:['Business Formation','Choosing the right structure from day one can save you money and headaches later.',['Entity selection &amp; S corp analysis','EIN and registrations','Bookkeeping set up right from the start'],'biz'],
+  run:['Ongoing Business Support','Let us handle the back office so you can focus on running the business.',['Monthly bookkeeping','Payroll &amp; quarterly filings','Strategy, HR &amp; planning advice'],'biz']
+};
+const res=document.getElementById('result');
+document.querySelectorAll('.opt').forEach(o=>o.onclick=()=>{
+  document.querySelectorAll('.opt').forEach(x=>x.classList.remove('active'));o.classList.add('active');
+  const [h,p,l,tab]=R[o.dataset.k];
+  res.innerHTML=`<h3>${h}</h3><p>${p}</p><ul>${l.map(i=>`<li>${i}</li>`).join('')}</ul>
+  <div style="display:flex;gap:.8rem;flex-wrap:wrap"><a href="#contact" class="btn btn-primary">Get started</a>
+  <a href="#services" class="btn btn-ghost" data-go="${tab}">See services</a></div>`;
+  res.querySelector('[data-go]').onclick=e=>document.querySelector(`.tab[data-tab="${e.target.dataset.go}"]`).click();
+});
+
+document.getElementById('form').onsubmit=e=>{
+  e.preventDefault();const f=new FormData(e.target);
+  const body=`Name: ${f.get('name')}\nPhone: ${f.get('phone')}\nEmail: ${f.get('email')}\nTopic: ${f.get('topic')}\n\n${f.get('msg')}`;
+  location.href=`mailto:Jaimee@financialaffairs.biz?subject=${encodeURIComponent('Consultation request: '+f.get('topic'))}&body=${encodeURIComponent(body)}`;
+};
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+
+<!-- ===== CHAT ASSISTANT ===== -->
+<button class="fa-launch" id="faLaunch" aria-label="Open chat assistant" aria-controls="faChat" aria-expanded="false">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4.4 14.2c-.6-2.6 1-5 3.4-5.4.2-2.6 2.8-4.2 5.2-3.2 1.6-2 4.6-2 6.2 0 2.4-1 5 .6 5.2 3.2 2.4.4 4 2.8 3.4 5.4 1.6 2 1.2 5-.8 6.4.4 2.8-1.6 5.2-4.4 5.2-1.4 2.4-4.4 3.2-6.6 1.8-2.2 1.4-5.2.6-6.6-1.8-2.8 0-4.8-2.4-4.4-5.2-2-1.4-2.4-4.4-.6-6.4z" fill="#a47750" stroke="#141517" stroke-width="1.3" stroke-linejoin="round"/><ellipse cx="16" cy="17.6" rx="9.2" ry="7.9" fill="#f2e6d2"/><ellipse cx="11.6" cy="16.4" rx="4.3" ry="2.3" transform="rotate(-27 11.6 16.4)" fill="#3b2a1d"/><ellipse cx="20.4" cy="16.4" rx="4.3" ry="2.3" transform="rotate(27 20.4 16.4)" fill="#3b2a1d"/><circle cx="12.4" cy="15.8" r="1.35" fill="#120c08"/><circle cx="19.6" cy="15.8" r="1.35" fill="#120c08"/><circle cx="12.8" cy="15.3" r=".5" fill="#fff"/><circle cx="20" cy="15.3" r=".5" fill="#fff"/><path d="M13.9 19.6c0-1.1 1-1.7 2.1-1.7s2.1.6 2.1 1.7-1 1.8-2.1 1.8-2.1-.7-2.1-1.8z" fill="#2a1d14"/><path d="M13.6 22.8c1.5 1.3 3.3 1.3 4.8 0" fill="none" stroke="#3b2a1d" stroke-width="1.1" stroke-linecap="round"/></svg>
+  <span>Questions? Ask here</span>
+</button>
+<div class="fa-chat" id="faChat" role="dialog" aria-label="Financial Affairs assistant">
+  <div class="fa-head">
+    <div class="fa-av"><svg viewBox="0 0 76 56" fill="none" stroke="#e0ab6c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="14" cy="16" rx="11" ry="13"/><path d="M4 54 18 30l7 14 3-28h16l6 32h24"/></svg></div>
+    <div><b>Financial Affairs Assistant</b><small>Automated helper · general info, not tax advice</small></div>
+    <button class="fa-x" id="faClose" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="fa-log" id="faLog" aria-live="polite"></div>
+  <div class="fa-in">
+    <input id="faInput" type="text" placeholder="Type your question…" autocomplete="off" maxlength="500" aria-label="Your message">
+    <button id="faSend" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+  <p class="fa-note">Please don't share Social Security, account or ID numbers in chat.</p>
+</div>
+
+<script>
+(function(){
+/* ---------- SETTINGS ----------
+   endpoint: leave '' to use the built-in answers below (works on any host, no cost).
+   To use a live AI model later, set this to YOUR OWN server URL that forwards
+   {system, messages} to an AI API and returns {"reply":"..."}.
+   Never put an AI API key in this file — anyone can read it. */
+const CONFIG={endpoint:''};
+
+/* System prompt for the AI version — this is the purpose & audience design. */
+const SYSTEM_PROMPT=`You are the website assistant for Financial Affairs LLC, an Arizona tax and accounting practice run by Jaimee J Paine, IRS Enrolled Agent (EA).
+PURPOSE: Help visitors get fast, accurate answers about the firm's services and common tax questions, and connect them with Jaimee whenever you can't help or they ask for a person.
+AUDIENCE: The general public — individuals, families, small-business owners and nonprofits. Assume no tax knowledge. Many are stressed (IRS letters, back taxes), so be calm, brief, kind and solution-first. Most are on phones: keep replies to 2-4 short sentences.
+IN SCOPE: Services (personal & business returns, prior-year/amended returns, IRS notices, audit representation, payment plans, offers in compromise, penalty abatement, innocent spouse relief, bookkeeping, payroll, business formation, financial statements, nonprofits, estates & trusts, business strategy, HR consulting, systems setup), what an EA is, what to bring, published federal deadlines, how to book.
+HAND OFF (end your reply with [HANDOFF]): any request for a person; IRS letters, audits, levies, garnishments or anything urgent; fees/pricing; questions needing their personal numbers; complaints; legal questions.
+NEVER: give advice specific to someone's situation, calculate their tax or refund, promise outcomes, quote prices or invent hours/locations, or ask for or repeat Social Security, bank or ID numbers. Stay on topic; politely decline anything unrelated.
+CONTACT: (928) 530-1078 · Jaimee@financialaffairs.biz`;
+
+const TEL='<a href="tel:+19285301078">(928) 530-1078</a>';
+const MAIL='<a href="mailto:Jaimee@financialaffairs.biz">Jaimee@financialaffairs.biz</a>';
+const T={ind:'Personal tax return',biz:'Business tax return',irs:'IRS notice or audit',back:'Back taxes / unfiled returns',books:'Bookkeeping or payroll',adv:'Business or HR advisory',other:'Something else'};
+
+/*KB-START*/
+const MENU=['I need my taxes done','I got an IRS letter',"I'm behind or I owe",'Business help','Deadlines','Talk to a person'];
+
+/* Knowledge base. k = keywords ("=word" means whole word only). hand = show contact options. */
+const KB=[
+{id:'greet',k:['=hi','=hello','=hey','=hiya','good morning','good afternoon','good evening'],a:`<p>Hi there! What can I help you with today?</p>`,chips:MENU},
+{id:'thanks',k:['thank','=thx','=ty','appreciate'],a:`<p>You're welcome! Anything else I can help with?</p>`,chips:['Talk to a person','Deadlines']},
+{id:'bye',k:['=bye','goodbye','that is all',"that's all",'=done'],a:`<p>Thanks for stopping by. If anything comes up, Jaimee is a call away at ${TEL}.</p>`},
+{id:'bot',k:['are you a bot','are you real','are you human','are you a person','=ai','robot','chatgpt'],a:`<p>I'm an automated assistant, so I share general information about Financial Affairs' services. For anything about your own situation, you'll want Jaimee — a real person and IRS Enrolled Agent.</p>`,hand:1},
+{id:'human',k:['human','real person','a person','someone','talk to','speak to','speak with','=call','phone','email','contact','appointment','consult','=book','book a','booking','schedule','meet with','reach jaimee','talk to a person'],a:`<p>Happy to connect you with Jaimee J Paine, EA. Call, email, or send a message and she'll get back to you to set up a consultation.</p>`,hand:1},
+{id:'services',k:['services','what do you do','what can you','what do you offer','=offer','help with'],a:`<p>Financial Affairs covers the full range of tax and accounting work:</p><ul><li><b>Individuals:</b> tax returns, amended & back-year returns, planning, estates</li><li><b>Businesses:</b> returns, bookkeeping, payroll, formation, nonprofits</li><li><b>IRS problems:</b> notices, audits, payment plans, settlements, penalty relief</li><li><b>Advisory:</b> strategy, HR consulting, systems setup</li></ul>`,chips:['I need my taxes done','I got an IRS letter','Business help']},
+{id:'ind',topic:T.ind,k:['taxes done','tax return','do my taxes','file my','filing my','1040','=w-2','=w2','personal tax','individual','family','families','=taxes'],a:`<p>Jaimee prepares federal and Arizona returns (plus multi-state), with all schedules, and checks whether itemizing beats the standard deduction so you capture every credit and deduction you qualify for.</p>`,chips:['What should I bring?','Deadlines','Talk to a person']},
+{id:'bring',k:['bring','documents','checklist','what do i need','paperwork','prepare for'],a:`<p>Typically:</p><ul><li>Photo ID</li><li>Social Security numbers for everyone on the return (bring these to your appointment, not this chat)</li><li>W-2s and 1099s</li><li>Mortgage & property-tax statements</li><li>Records of deductible expenses</li><li>Any IRS letters</li><li>Last year's return</li></ul><p>You'll get a personalized checklist after your consultation.</p>`,chips:['Talk to a person']},
+{id:'amend',topic:T.ind,k:['amend','1040-x','1040x','mistake','made an error','correct my','prior year','prior-year','missed a deduction'],a:`<p>Spotted a mistake or missed something? Jaimee prepares Form 1040-X amendments and can recover refunds you missed on earlier returns.</p>`,chips:["I haven't filed in years",'Talk to a person']},
+{id:'life',topic:T.ind,k:['married','marriage','divorce','baby','dependent','new child','buying a home','bought a house','sold my house','selling a home','retire','social security income','social security benefits'],a:`<p>Big life changes affect your taxes — marriage, divorce, new dependents, buying or selling a home, retirement and Social Security income. Jaimee can walk you through what changes for you.</p>`,hand:1},
+{id:'invest',topic:T.ind,k:['crypto','bitcoin','stock','capital gain','invest','rental','landlord','schedule e','1099','gig','uber','lyft','doordash','side income','side hustle','freelance'],a:`<p>Yes — clean reporting for income that doesn't come on a W-2: stocks, crypto & capital gains, rental property (Schedule E), and gig or 1099 work.</p>`,chips:['Tax planning','Talk to a person']},
+{id:'plan',topic:T.ind,k:['planning','tax planning','withholding','estimated payment','reduce my tax','lower my tax','save on taxes','deduct','write off','write-off','credit','retirement contribution','ira','401k'],a:`<p>Whether something is deductible or which strategy saves the most depends on your details, so I can't say for your situation. Jaimee offers year-round planning: withholding, estimated payments, retirement contributions, and education & family credits.</p>`,hand:1},
+{id:'estate',topic:T.ind,k:['estate','trust','1041','passed away','died','deceased','death','inherit','=k-1','executor'],a:`<p>I'm sorry if you're handling this after a loss. Jaimee prepares trust & estate returns (Form 1041), final individual returns and beneficiary K-1s, with patience and care.</p>`,hand:1},
+{id:'refund',k:["where's my refund",'wheres my refund','where is my refund','refund status','my refund','check my refund'],a:`<p>If your return is already filed, the IRS "Where's My Refund?" tool at <a href="https://www.irs.gov/refunds" target="_blank" rel="noopener">irs.gov/refunds</a> shows its status. If something looks wrong or it's taking unusually long, Jaimee can look into it.</p>`,hand:1},
+{id:'calc',k:['how much will i','how much do i owe','refund amount','calculate','estimate my','how much tax'],a:`<p>I can't calculate taxes or refunds — that depends on your full picture. Jaimee can give you real numbers once she's reviewed your documents.</p>`,hand:1},
+{id:'notice',topic:T.irs,k:['letter','notice','cp2000','=cp14','=cp','mail from the irs','irs sent','irs contacted','irs wrote','got something from the irs'],a:`<p>First: don't ignore it, and don't pay or respond until you understand it. Many notices have response deadlines, so reach out soon.</p><p>Because Jaimee is an Enrolled Agent, she can review the letter, explain it, and respond to the IRS for you.</p>`,hand:1},
+{id:'audit',topic:T.irs,k:['audit','audited','examination','appeal'],a:`<p>As an Enrolled Agent, Jaimee can represent you directly before the IRS — correspondence and office audits, document preparation, and appeals support. Please reach out as soon as possible, since audits have deadlines.</p>`,hand:1},
+{id:'back',topic:T.back,k:['=owe','=owed','owing','=behind','balance due','back taxes',"haven't filed","havent filed",'not filed','unfiled','didn\'t file','did not file','catch up','payment plan','installment','tax debt',"can't pay",'cannot pay','levy','levies','garnish','currently not collectible'],a:`<p>This is very common and very fixable. Options include:</p><ul><li>Filing missing back-year returns</li><li>Installment agreements or currently-not-collectible status</li><li>Stopping levies & garnishments</li><li>Penalty relief or a settlement, when it fits</li></ul><p>Jaimee pulls your IRS records and builds a plan with you.</p>`,hand:1},
+{id:'oic',topic:T.back,k:['offer in compromise','=oic','settle','settlement','pennies on the dollar','reduce what i owe'],a:`<p>When paying in full isn't realistic, an Offer in Compromise may be possible. Jaimee analyzes eligibility, prepares the financial statements and negotiates with the IRS. Not everyone qualifies, so a review comes first.</p>`,hand:1},
+{id:'penalty',topic:T.back,k:['penalt','abatement','first-time abatement','reasonable cause','interest charge'],a:`<p>Jaimee can request penalty relief through first-time abatement or a reasonable-cause letter, and review the interest charged.</p>`,hand:1},
+{id:'spouse',topic:T.irs,k:['innocent spouse','injured spouse','ex-spouse','ex spouse','ex-husband','ex husband','ex-wife','ex wife','8857'],a:`<p>If a spouse's or ex-spouse's tax errors landed on you, Jaimee can help separate your liability — Form 8857 innocent spouse relief or an injured spouse claim, with the supporting documentation.</p>`,hand:1},
+{id:'biz',topic:T.biz,k:['business','company','partnership','1065','1120','sole prop','self-employed','self employed','corporation','c corp'],a:`<p>For businesses, Financial Affairs handles returns for every common structure (Schedule C, 1065, 1120-S, 1120), plus monthly bookkeeping, payroll, financial statements and nonprofit filings.</p>`,chips:['Bookkeeping','Payroll','Starting a business','Should my LLC be an S corp?']},
+{id:'start',topic:T.biz,k:['starting a business','start a business','new business','formation','form an llc','=llc','=ein','entity','register my business'],a:`<p>Choosing the right structure from day one saves money and headaches. Jaimee helps with entity selection, EIN & registrations, S corp election analysis, and setting up bookkeeping right from the start.</p>`,chips:['Should my LLC be an S corp?','Talk to a person']},
+{id:'scorp',topic:T.biz,k:['s corp','s-corp','scorp','s corporation','1120-s'],a:`<p>It depends on your profit level, how you pay yourself and your state. For some owners it saves meaningful self-employment tax; for others the extra payroll costs outweigh it. Jaimee will run the numbers for your situation.</p>`,hand:1},
+{id:'books',topic:T.books,k:['bookkeep','=books','reconcil','quickbooks','catch-up bookkeeping','categoriz'],a:`<p>Organized, reconciled books every month — bank & card reconciliation, categorization & cleanup, and catch-up bookkeeping if you've fallen behind.</p>`,chips:['Payroll','Talk to a person']},
+{id:'payroll',topic:T.books,k:['payroll','paycheck','=941','=940','w-2s','1099s','pay my employees','pay employees'],a:`<p>Pay your people right and on time: payroll processing, quarterly 941 & annual 940 filings, and W-2 & 1099 preparation.</p>`,chips:['HR questions','Talk to a person']},
+{id:'hr',topic:T.adv,k:['=hr','hr questions','hiring','onboard','compensation','benefits','employee vs','contractor','human resource'],a:`<p>Backed by a master's in Human Resource Management, Jaimee advises on employee vs. contractor questions, compensation & benefits structure, and hiring & onboarding processes.</p>`,hand:1},
+{id:'adv',topic:T.adv,k:['strategy','budget','forecast','profit','=kpi','financial statement','p&l','profit and loss','balance sheet','cash flow','loan','lender','software setup','automation','systems'],a:`<p>Advisory services include MBA-level business strategy (budgeting, forecasting, profitability), clear financial statements for lenders and planning, and accounting software & workflow setup.</p>`,hand:1},
+{id:'np',topic:T.biz,k:['nonprofit','non-profit','=990','charity','501c3','501(c)'],a:`<p>Yes — Form 990-series returns, fund tracking and board-ready reporting for nonprofits.</p>`,hand:1},
+{id:'ea',k:['enrolled agent','=ea','=cpa','difference','credential','qualified','licensed','license'],a:`<p>An Enrolled Agent is licensed by the IRS and specializes in taxation and representing taxpayers before the IRS — with unlimited representation rights in any state and yearly continuing education.</p><p>CPAs are licensed by states and often focus on auditing and general accounting. For tax prep and IRS issues, an EA is a specialist.</p>`},
+{id:'about',k:['jaimee','who are you','who is','experience','background','teach','degree'],a:`<p>Jaimee J Paine is an IRS Enrolled Agent and founder of Financial Affairs LLC. She has taught college accounting, business and paralegal courses since 2007, and holds an MBA, a master's in HR management, an M.S. in educational technology and a B.S. in technical management.</p>`,chips:['Talk to a person']},
+{id:'deadline',k:['deadline','=due','when is','=april','extension','estimated tax','quarterly','tax day'],a:`<p>Key 2027 federal deadlines (calendar-year filers):</p><ul><li><b>Jan 15</b> — Q4 2026 estimated tax</li><li><b>Mar 15</b> — Partnership & S corp returns</li><li><b>Apr 15</b> — Individual & C corp returns; Q1 estimate</li><li><b>Jun 15</b> — Q2 estimate</li><li><b>Sep 15</b> — Extended business returns; Q3 estimate</li><li><b>Oct 15</b> — Extended individual returns</li></ul><p>Dates can shift for weekends, holidays or disaster relief — contact Jaimee to confirm yours.</p>`,chips:['I need my taxes done','Talk to a person']},
+{id:'price',k:['cost','price','pricing','=fee','fees','charge','how much','expensive','=rates','afford'],a:`<p>Pricing depends on what you need, so it isn't listed here. Jaimee will review your situation and agree on a clear scope with you during the consultation.</p>`,hand:1},
+{id:'where',k:['where are you','located','location','office','address','arizona','remote','virtual','online','in person','in-person','near me','other state'],a:`<p>Financial Affairs is rooted in Arizona and also prepares multi-state returns. For meeting options, contact Jaimee directly.</p>`,hand:1},
+{id:'hours',k:['hours','=open','closed','weekend','saturday','sunday','what time'],a:`<p>Office hours aren't listed here — call ${TEL} or email ${MAIL} and Jaimee will get back to you.</p>`}
+];
+
+function norm(s){return ' '+String(s).toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9&'()\- ]+/g,' ').replace(/\s+/g,' ').trim()+' '}
+function hit(t,k){return k[0]==='='?t.includes(' '+k.slice(1)+' '):t.includes(' '+k)}
+function match(text){
+  const t=norm(text);let best=null,bs=0;
+  for(const it of KB){let s=0;for(const k of it.k)if(hit(t,k))s+=k.replace('=','').length;if(s>bs){bs=s;best=it}}
+  return best;
+}
+const SENSITIVE=/\b\d{3}[- ]?\d{2}[- ]?\d{4}\b|\b\d{2}-\d{7}\b|\b\d{8,17}\b/;
+const URGENT=/levy|levies|garnish|seiz|urgent|asap|emergency|due (today|tomorrow)|final notice|intent to levy/i;
+const UPSET=/frustrat|angry|upset|furious|ridiculous|terrible|worst|complain|scared|panic|stress|overwhelm|worried|freaking/i;
+/*KB-END*/
+
+if(typeof document==='undefined'){module.exports={match,KB,SENSITIVE,URGENT,UPSET};return}
+
+const $=id=>document.getElementById(id);
+const launch=$('faLaunch'),chat=$('faChat'),log=$('faLog'),input=$('faInput');
+let started=false,fails=0,lastTopic='',busy=false;const asked=[],history=[];
+
+function scroll(){log.scrollTop=log.scrollHeight}
+function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function bot(html){log.appendChild(el('div','fa-m bot',html));scroll()}
+function me(text){const d=el('div','fa-m me');d.textContent=text;log.appendChild(d);scroll()}
+function chips(list){if(!list||!list.length)return;const w=el('div','fa-chips');list.forEach(c=>{const b=el('button','fa-chip');b.type='button';b.textContent=c;b.onclick=()=>{w.remove();send(c)};w.appendChild(b)});log.appendChild(w);scroll()}
+function typing(){const t=el('div','fa-m bot fa-typing','<i></i><i></i><i></i>');log.appendChild(t);scroll();return t}
+
+function handoff(msg){
+  const h=el('div','fa-hand');
+  h.innerHTML=`<p>${msg||'Want to talk with Jaimee directly?'}</p>
+    <a class="pri" href="tel:+19285301078">Call (928) 530-1078</a>
+    <a href="mailto:Jaimee@financialaffairs.biz">Email Jaimee@financialaffairs.biz</a>
+    <button type="button">Send a message from this site</button>`;
+  h.querySelector('button').onclick=prefill;
+  log.appendChild(h);scroll();
+}
+function prefill(){
+  const form=$('form');if(!form)return;
+  const sel=form.querySelector('select[name=topic]'),ta=form.querySelector('textarea[name=msg]');
+  if(sel)sel.value=lastTopic||T.other;
+  if(ta&&!ta.value.trim()&&asked.length)ta.value='From my chat with the website assistant:\n- '+asked.slice(-3).join('\n- ')+'\n\n';
+  close();document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>{const n=form.querySelector('input[name=name]');n&&n.focus({preventScroll:true})},600);
+}
+function feedback(){
+  const f=el('div','fa-fb','Helpful? <button type="button" aria-label="Yes, helpful">👍</button><button type="button" aria-label="Not helpful">👎</button>');
+  const [up,down]=f.querySelectorAll('button');
+  const rec=v=>{try{const k='fa-chat-feedback',d=JSON.parse(localStorage.getItem(k)||'{"up":0,"down":0}');d[v]++;localStorage.setItem(k,JSON.stringify(d))}catch(e){}
+    (window.dataLayer=window.dataLayer||[]).push({event:'chat_feedback',value:v});f.textContent='Thanks for the feedback!'};
+  up.onclick=()=>rec('up');
+  down.onclick=()=>{rec('down');bot('<p>Sorry that missed the mark. Jaimee can answer this properly.</p>');handoff()};
+  log.appendChild(f);scroll();
+}
+
+function local(text){
+  let pre='';const urgent=URGENT.test(text);
+  if(UPSET.test(text))pre+=`<p>I'm sorry you're dealing with this — it's usually very fixable, and you don't have to sort it out alone.</p>`;
+  if(urgent)pre+=`<p><b>This sounds time-sensitive.</b> The fastest way to get help is to call Jaimee at ${TEL}.</p>`;
+  const it=match(text);
+  if(!it){
+    fails++;
+    if(!lastTopic&&urgent)lastTopic=T.irs;
+    bot(pre+(fails>1||pre?`<p>I'm not able to answer that one, but Jaimee can.</p>`:`<p>Sorry, I'm not sure I understood. I'm a simple assistant for questions about Financial Affairs' tax, IRS, bookkeeping and business services. Try one of these, or reach Jaimee directly:</p>`));
+    if(fails>1||pre)handoff();else chips(MENU);
+    return;
+  }
+  fails=0;if(it.topic)lastTopic=it.topic;
+  if(it.id==='human'&&!lastTopic)lastTopic=T.other;
+  bot(pre+it.a);
+  if(it.hand||urgent)handoff();
+  chips(it.chips);
+  if(!['greet','thanks','bye','human'].includes(it.id))feedback();
+}
+
+async function ai(text){
+  try{
+    const r=await fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({system:SYSTEM_PROMPT,messages:history})});
+    if(!r.ok)throw 0;const j=await r.json();let txt=String(j.reply||'');if(!txt)throw 0;
+    const h=txt.includes('[HANDOFF]');txt=txt.replace(/\[HANDOFF\]/g,'').trim();
+    history.push({role:'assistant',content:txt});
+    bot('<p>'+esc(txt).replace(/\n+/g,'</p><p>')+'</p>');
+    if(h){const it=match(text);if(it&&it.topic)lastTopic=it.topic;handoff()}
+    feedback();
+  }catch(e){history.pop();local(text)}
+}
+
+function send(raw){
+  const text=(raw||'').trim();if(!text||busy)return;
+  input.value='';
+  if(SENSITIVE.test(text)){
+    me(text.replace(/\d/g,'•'));
+    bot(`<p>For your security, please don't share Social Security, bank, account or ID numbers in chat — I've hidden what you typed and it wasn't saved. Jaimee collects sensitive details through a secure process once you're working together.</p><p>Could you ask your question without those numbers?</p>`);
+    return;
+  }
+  me(text);asked.push(text);history.push({role:'user',content:text});
+  busy=true;const t=typing();
+  setTimeout(async()=>{t.remove();if(CONFIG.endpoint)await ai(text);else{local(text);history.push({role:'assistant',content:'(scripted)'})}busy=false;input.focus()},550);
+}
+
+function greet(){
+  started=true;
+  bot(`<p>Hi! I'm the Financial Affairs virtual assistant. I can answer common questions about our tax, IRS, bookkeeping and business services, and connect you with <b>Jaimee J Paine, EA</b>.</p><p>I'm automated, so I share general information — not advice for your specific situation. What can I help with?</p>`);
+  chips(MENU);
+}
+function open(){chat.classList.add('open');launch.classList.add('hide');launch.setAttribute('aria-expanded','true');if(!started)greet();setTimeout(()=>input.focus(),50)}
+function close(){chat.classList.remove('open');launch.classList.remove('hide');launch.setAttribute('aria-expanded','false');launch.focus({preventScroll:true})}
+
+const SLOTH=`<svg viewBox="0 0 80 110" aria-hidden="true"><defs><radialGradient id="faFur" cx=".42" cy=".35" r=".75"><stop offset="0" stop-color="#c49a6e"/><stop offset=".65" stop-color="#a47750"/><stop offset="1" stop-color="#7e5a3b"/></radialGradient><radialGradient id="faHd" cx=".45" cy=".35" r=".7"><stop offset="0" stop-color="#c9a077"/><stop offset="1" stop-color="#8f6745"/></radialGradient><linearGradient id="faArm" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#a87b53"/><stop offset="1" stop-color="#8a6243"/></linearGradient></defs>
+<g class="fig" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<g class="legs"><path d="M33.5 84 31 98" stroke="#93694a" stroke-width="6.5"/><path d="M46.5 84 49 98" stroke="#93694a" stroke-width="6.5"/><g stroke="#2a1e15" stroke-width="1.5"><path d="M28.6 98.5c-.4 2.8 1.2 4.4 3.4 4.4"/><path d="M31 99c0 2.6 1.4 4 3.4 3.8"/><path d="M51.4 98.5c.4 2.8-1.2 4.4-3.4 4.4"/><path d="M49 99c0 2.6-1.4 4-3.4 3.8"/></g></g>
+<g class="armL"><path d="M27 47 29 9" stroke="url(#faArm)" stroke-width="7"/><path d="M26.6 42 27.8 15" stroke="#c19570" stroke-width="1.4" opacity=".6"/><g stroke="#2a1e15" stroke-width="1.6"><path d="M25.5 10c-1.3-4 1.6-7 5.3-5.6"/><path d="M27.8 10.4c-1-3.8 1.9-6.4 5.3-4.7"/><path d="M30.1 10.9c-.6-3.4 2-5.8 5-4"/></g></g>
+<g class="armR"><path d="M53 47 51 9" stroke="url(#faArm)" stroke-width="7"/><path d="M53.4 42 52.2 15" stroke="#c19570" stroke-width="1.4" opacity=".6"/><g stroke="#2a1e15" stroke-width="1.6"><path d="M54.5 10c1.3-4-1.6-7-5.3-5.6"/><path d="M52.2 10.4c1-3.8-1.9-6.4-5.3-4.7"/><path d="M49.9 10.9c.6-3.4-2-5.8-5-4"/></g></g>
+<path d="M22 62c0-14 8-21 18-21s18 7 18 21-6 28-18 28-18-14-18-28z" fill="url(#faFur)"/>
+<ellipse cx="40" cy="67" rx="10" ry="14" fill="#d2ad84" opacity=".45"/>
+<g stroke="#80603f" stroke-width="1.5"><path d="M27 82l-1.4 2.4M32 87l-.8 2.8M48 87l.8 2.8M53 82l1.4 2.4"/></g>
+<g stroke="#d1aa80" stroke-width="1" opacity=".7"><path d="M28 56c2 6 2 12 1 18M52 56c-2 6-2 12-1 18M36 60c2 1 6 1 8 0"/></g>
+<g class="head"><g transform="translate(40 33) scale(1.15) translate(-23.5 -38.5)">
+<path d="M13.5 35.5c-1.2-2.6.3-5.2 2.6-5.6-.4-2.6 2.2-4.4 4.5-3.4 1.2-2.2 4.4-2.4 5.8-.4 2.2-1 4.8.4 4.8 3 2.6.6 3.6 3.4 2.2 5.6 1.8 2 1.4 5-.8 6.2.8 2.6-.8 5.2-3.4 5.4-1 2.4-4 3.4-6.2 2-2 1.6-5 1-6-1.2-2.6-.2-4.2-3-3-5.4-2.2-1.6-2.2-4.8-.5-6.2z" fill="url(#faHd)"/>
+<ellipse cx="23.5" cy="39.8" rx="8.4" ry="7.2" fill="#f2e6d2"/>
+<ellipse cx="19.6" cy="38.7" rx="3.9" ry="2.1" transform="rotate(-27 19.6 38.7)" fill="#3b2a1d"/>
+<ellipse cx="27.4" cy="38.7" rx="3.9" ry="2.1" transform="rotate(27 27.4 38.7)" fill="#3b2a1d"/>
+<g class="eyes"><circle cx="20.3" cy="38.2" r="1.25" fill="#120c08"/><circle cx="26.7" cy="38.2" r="1.25" fill="#120c08"/><circle cx="20.7" cy="37.8" r=".45" fill="#fff"/><circle cx="27.1" cy="37.8" r=".45" fill="#fff"/></g>
+<circle cx="17.6" cy="42.6" r="1.7" fill="#e0ab6c" opacity=".35"/><circle cx="29.4" cy="42.6" r="1.7" fill="#e0ab6c" opacity=".35"/>
+<path d="M21.6 41.6c0-1 .9-1.5 1.9-1.5s1.9.5 1.9 1.5-.9 1.6-1.9 1.6-1.9-.6-1.9-1.6z" fill="#2a1d14"/><circle cx="23" cy="41.2" r=".4" fill="#7d6450"/>
+<path d="M21.3 44.6c1.4 1.2 3 1.2 4.4 0" stroke="#3b2a1d" stroke-width="1"/>
+</g></g></g></svg>`;
+let moving=false;
+function hangThenOpen(){try{hangAnim()}catch(e){moving=false;document.querySelectorAll('.fa-hang').forEach(x=>x.remove());open()}}
+function hangAnim(){
+  if(moving)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!document.body.animate){open();return}
+  moving=true;
+  const r=launch.getBoundingClientRect();
+  const w=el('div','fa-hang','<div class="fa-branch"></div><div class="fa-sloth">'+SLOTH+'</div><div class="fa-hi">Hi there! 👋</div>');
+  w.style.left=Math.max(110,r.right-150)+'px';w.style.top=Math.max(8,r.bottom-118)+'px';
+  const br=w.querySelector('.fa-branch');
+  [[.06,-9,-20],[.45,6,160],[.88,-9,-12]].forEach(([x,y,rot],i)=>{const l=document.createElement('i');l.style.left=(x*100)+'%';l.style.top=y+'px';l.style.transform=`rotate(${rot}deg)`;l.style.animationDelay=(i*-.5)+'s';br.appendChild(l)});
+  launch.classList.add('hide');document.body.appendChild(w);
+  br.animate([{opacity:0,transform:'scaleX(.4)'},{opacity:1,transform:'none'}],{duration:300,easing:'ease-out'});
+  const sl=w.querySelector('.fa-sloth'),hi=w.querySelector('.fa-hi');
+  setTimeout(()=>{
+    sl.classList.add('wave');
+    hi.animate([{opacity:0,transform:'scale(.5) translateY(6px)'},{opacity:1,transform:'none'}],{duration:280,delay:200,easing:'cubic-bezier(.3,1.5,.6,1)',fill:'forwards'});
+    setTimeout(()=>{const a=w.animate([{opacity:1},{opacity:0,transform:'translateY(-8px)'}],{duration:300,fill:'forwards'});a.onfinish=a.oncancel=()=>{w.remove();moving=false;open()}},1500);
+  },1400);
+}
+launch.onclick=hangThenOpen;$('faClose').onclick=close;
+$('faSend').onclick=()=>send(input.value);
+input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();send(input.value)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&chat.classList.contains('open'))close()});
+})();
+</script>
+</body>
+</html>
